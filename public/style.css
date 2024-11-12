@@ -5,25 +5,31 @@
 }
 
 body {
-    background-color: mediumslateblue;
-    color: white;
+    background: url(./back.jpg);
+    background-size: cover;
+    background-color: rgb(18, 15, 32);
+    color: rgb(255, 200, 0);;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
 }
 
 header {
     font-size: 1.5rem;
+
 }
 
 header, 
+
 form {
     min-height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 70px;
 }
 
 form input, 
+
 form button {
     padding: 0.5rem;
     padding-left: 1rem;
@@ -53,13 +59,28 @@ form button:hover {
 
 .todo-container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .todo-list {
     min-width: 30%;
+    max-height: calc(5 * 40px); 
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
     list-style: none;
+}
+
+.todo-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
 }
 
 .todo {
@@ -80,6 +101,7 @@ form button:hover {
 }
 
 .trash-btn, 
+
 .complete-btn {
     color: white;
     border: none;
@@ -89,32 +111,43 @@ form button:hover {
 }
 
 .complete-btn {
+
     background: rgb(255, 200, 0);
 }
 
 .trash-btn {
+
     border-top-right-radius: 1.75rem;
     border-bottom-right-radius: 1.75rem;
     background: rgb(171, 171, 171);
 }
 
 .todo-item {
+
     padding: 0rem 0.5rem;
 }
 
 .fa-trash, 
+
 .fa-check-circle {
+
     pointer-events: none;
+
 }
 
 .completed {
+
     text-decoration: line-through;
+
     opacity: 0.5;
 }
 
 .slide {
+
     transform: translateX(10rem);
+
     opacity: 0;
+
 }
 
 select {
@@ -126,6 +159,7 @@ select {
 }
 
 .select {
+
     margin: 1rem;
     position: relative;
     overflow: hidden;
@@ -133,12 +167,15 @@ select {
 }
 
 select {
+    
     color:rgb(255, 200, 0);
     width: 10rem;
     height: 3.2rem;
     cursor: pointer;
     padding: 1rem;
 }
+
+
 
 .select::after {
     content: "\25BC";
@@ -154,4 +191,46 @@ select {
 .select::hover::after {
     background: white;
     color: rgb(255, 200, 0);
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2rem;
+        margin-right: 0;
+    }
+
+    form {
+        flex-direction: column;
+        padding: 0 1rem;
+        margin-right: 0;
+    }
+
+    form input, 
+    form button {
+        font-size: 1.5rem;
+        width: 50%;
+        margin: 0.3rem 0;
+    }
+
+    .todo-container {
+        max-width: 60%;
+    }
+
+    .todo {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .trash-btn, 
+    .complete-btn {
+        padding: 0.7rem;
+    }
+
+    .select {
+        width: 50%;
+    }
+
+    select {
+        width: 80%;
+    }
 }
