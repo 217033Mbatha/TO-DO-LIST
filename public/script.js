@@ -10,7 +10,7 @@ filterOption.addEventListener("change", filterTodo);
 
 function addTodo(event) {
     event.preventDefault();
-    if (todoInput.value.trim() === "") return;  // Prevent adding empty items
+    if (todoInput.value.trim() === "") return; 
 
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");

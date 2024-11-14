@@ -10,17 +10,17 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public'))); // Serves static files from "public" directory
+app.use(express.static(path.join(__dirname, 'public'))); 
 
-// Define a route for the root URL
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Listfile.html')); // Serve the main HTML file
+    res.sendFile(path.join(__dirname, 'public', 'Listfile.html')); 
 });
 
-// Path to the JSON file storing the to-do list
-const todosFilePath = path.join(__dirname, 'public', 'Listfile.json'); // Make sure 'Listfile.json' exists
 
-// Get all todos
+const todosFilePath = path.join(__dirname, 'public', 'Listfile.json'); 
+
+
 app.get('/api/todos', async (req, res) => {
     try {
         const todos = await fs.readJson(todosFilePath);
@@ -30,7 +30,7 @@ app.get('/api/todos', async (req, res) => {
     }
 });
 
-// Add a new todo
+
 app.post('/api/todos', async (req, res) => {
     try {
         const todos = await fs.readJson(todosFilePath);
@@ -43,7 +43,7 @@ app.post('/api/todos', async (req, res) => {
     }
 });
 
-// Update a todo's completion status
+
 app.patch('/api/todos/:id', async (req, res) => {
     try {
         const todos = await fs.readJson(todosFilePath);
@@ -60,7 +60,7 @@ app.patch('/api/todos/:id', async (req, res) => {
     }
 });
 
-// Delete a todo
+
 app.delete('/api/todos/:id', async (req, res) => {
     try {
         let todos = await fs.readJson(todosFilePath);
@@ -72,7 +72,6 @@ app.delete('/api/todos/:id', async (req, res) => {
     }
 });
 
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
