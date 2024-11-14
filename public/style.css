@@ -5,8 +5,10 @@
 }
 
 body {
-    background-color: mediumslateblue;
-    color: white;
+    background: url(./back.jpg);
+    background-size: cover;
+    background-color: rgb(18, 15, 32);
+    color: rgb(255, 200, 0);
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
 }
@@ -15,15 +17,16 @@ header {
     font-size: 1.5rem;
 }
 
-header, 
+header,
 form {
     min-height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 70px;
 }
 
-form input, 
+form input,
 form button {
     padding: 0.5rem;
     padding-left: 1rem;
@@ -37,7 +40,7 @@ form button {
     color: rgb(255, 200, 0);
     background: white;
     cursor: pointer;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
     margin-left: 0.5rem;
 }
 
@@ -51,17 +54,34 @@ form button:hover {
     margin-left: -8px;
 }
 
+/* To-Do Container */
 .todo-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
 }
 
 .todo-list {
-    min-width: 30%;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0;
     list-style: none;
 }
 
+.todo-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* To-Do Item Styling */
 .todo {
     margin: 0.5rem;
     padding-left: 0.5rem;
@@ -79,7 +99,7 @@ form button:hover {
     flex: 1;
 }
 
-.trash-btn, 
+.trash-btn,
 .complete-btn {
     color: white;
     border: none;
@@ -98,11 +118,12 @@ form button:hover {
     background: rgb(171, 171, 171);
 }
 
+/* Other Styling */
 .todo-item {
-    padding: 0rem 0.5rem;
+    padding: 0 0.1rem;
 }
 
-.fa-trash, 
+.fa-trash,
 .fa-check-circle {
     pointer-events: none;
 }
@@ -118,8 +139,6 @@ form button:hover {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     outline: none;
     border: none;
@@ -133,7 +152,7 @@ select {
 }
 
 select {
-    color:rgb(255, 200, 0);
+    color: rgb(255, 200, 0);
     width: 10rem;
     height: 3.2rem;
     cursor: pointer;
@@ -143,15 +162,61 @@ select {
 .select::after {
     content: "\25BC";
     position: absolute;
-    background:rgb(255, 200, 0);
+    background: rgb(255, 200, 0);
     top: 0;
     right: 0;
     padding: 1rem;
     pointer-events: none;
     transition: all 0.3s ease;
+    color: white;
 }
 
-.select::hover::after {
+.select:hover::after {
     background: white;
     color: rgb(255, 200, 0);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2rem;
+        margin-right: 0;
+    }
+
+    form {
+        flex-direction: column;
+        padding: 0 1rem;
+        margin-right: 0;
+    }
+
+    form input,
+    form button {
+        font-size: 1.5rem;
+        width: 80%;
+        margin: 0.3rem 0;
+    }
+
+    .todo-container {
+        width: 90%; /* Make the container wider on smaller screens */
+        max-width: none; /* Remove max-width constraint */
+        margin: 0 auto;
+    }
+
+    .todo {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .trash-btn,
+    .complete-btn {
+        padding: 0.7rem;
+    }
+
+    .select {
+        width: 60%;
+    }
+
+    select {
+        width: 100%;
+    }
 }
