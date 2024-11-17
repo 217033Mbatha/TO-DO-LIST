@@ -4,8 +4,8 @@ README file for my To-Do List application:
 
 # To-Do List Application
 
-<img width="930" alt="Screenshot (24)" src="https://github.com/user-attachments/assets/10dff6a5-cb82-479a-bdbe-151dd8a60fa8">
-<img width="932" alt="Screenshot (23)" src="https://github.com/user-attachments/assets/7e77c0de-5153-40aa-aa65-ed9bf2a5977e">
+"C:\Users\Username\Pictures\Screenshots\Screenshot (27).png"
+"C:\Users\Username\Pictures\Screenshots\Screenshot (25).png"
 
 
 
