@@ -3,11 +3,11 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
-
 document.addEventListener("DOMContentLoaded", getLocalTodos);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("change", filterTodo);
+
 
 function addTodo(event) {
     event.preventDefault();
@@ -36,6 +36,7 @@ function addTodo(event) {
     todoList.appendChild(todoDiv);
     todoInput.value = "";
 }
+
 
 function deleteCheck(e) {
     const item = e.target;
@@ -116,6 +117,7 @@ function getLocalTodos() {
         todoList.appendChild(todoDiv);
     });
 }
+
 
 function updateLocalTodos(todo) {
     let todos = localStorage.getItem("todos") === null ? [] : JSON.parse(localStorage.getItem("todos"));
