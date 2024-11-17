@@ -5,16 +5,15 @@
 }
 
 body {
-    background: url(./back.jpg);
-    background-size: cover;
-    background-color: rgb(18, 15, 32);
-    color: rgb(255, 200, 0);
+    background: linear-gradient(to bottom, #fff8e1, #ffecb3); 
     font-family: "Poppins", sans-serif;
+    color: rgb(255, 200, 0);
     min-height: 100vh;
 }
 
 header {
     font-size: 1.5rem;
+    
 }
 
 header,
@@ -23,7 +22,6 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 70px;
 }
 
 form input,
@@ -54,7 +52,6 @@ form button:hover {
     margin-left: -8px;
 }
 
-/* To-Do Container */
 .todo-container {
     display: flex;
     justify-content: center;
@@ -81,7 +78,6 @@ form button:hover {
     border-radius: 4px;
 }
 
-/* To-Do Item Styling */
 .todo {
     margin: 0.5rem;
     padding-left: 0.5rem;
@@ -118,7 +114,6 @@ form button:hover {
     background: rgb(171, 171, 171);
 }
 
-/* Other Styling */
 .todo-item {
     padding: 0 0.1rem;
 }
@@ -176,13 +171,16 @@ select {
     color: rgb(255, 200, 0);
 }
 
-/* Responsive adjustments for smaller screens */
+
 @media (max-width: 768px) {
     header {
-        font-size: 1.2rem;
-        margin-right: 0;
+        font-size: .9rem;
+        
     }
-
+    body {
+        background-attachment: scroll;
+        background-size: contain;
+    }
     form {
         flex-direction: column;
         padding: 0 1rem;
@@ -197,8 +195,8 @@ select {
     }
 
     .todo-container {
-        width: 90%; /* Make the container wider on smaller screens */
-        max-width: none; /* Remove max-width constraint */
+        width: 90%; 
+        max-width: none;
         margin: 0 auto;
     }
 
