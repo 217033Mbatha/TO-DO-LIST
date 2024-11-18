@@ -4,9 +4,6 @@ README file for my To-Do List application:
 
 # To-Do List Application
 
-<img width="930" alt="Screenshot (24)" src="https://github.com/user-attachments/assets/10dff6a5-cb82-479a-bdbe-151dd8a60fa8">
-<img width="932" alt="Screenshot (23)" src="https://github.com/user-attachments/assets/7e77c0de-5153-40aa-aa65-ed9bf2a5977e">
-
 
 
 This is a simple To-Do List web application built using Node.js, Express, and Vanilla JavaScript. The app allows users to add, update, delete, and filter tasks. All tasks are saved locally on the server, and the user interface provides an easy and interactive way to manage tasks.
